@@ -8,7 +8,7 @@
 # 		for example: 52997,7.161
 # 		(in order to get the length for your relations, you scrape them from  http://ra.osmsurround.org/analyzeRelation using a modified version of this script.
 #
-# Warning: the command on line 24 and 49 is used to round down the length to two decimal digits. This might not work, depending on your locale. Please read https://unix.stackexchange.com/questions/167058/how-to-round-floating-point-numbers-in-shell if you have problems
+# Warning: the command on line 26 and 49 is used to round down the length to two decimal digits. This might not work, depending on your locale. Please read https://unix.stackexchange.com/questions/167058/how-to-round-floating-point-numbers-in-shell if you have problems
 #
 # Questions: s8evq@runbox.com
 
