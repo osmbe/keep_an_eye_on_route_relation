@@ -7,7 +7,7 @@ It can optionally also check if the length is still equal to a length you listed
 
 First of all, you need clear text file, in wich you write down the relation number you want to check.
 
-(optional):   You can add a comma, followed by the relation length, expressed in KM, with decimal separator "."
-              for example: 52997,7.161
-              (in order to get the length for your relations, you scrape them from  http://ra.osmsurround.org/analyzeRelation using a modified version of this script.
+(optional):   You can add a comma, followed by the relation length, expressed in KM, with decimal separator ".".
+              For example: 52997,7.161
+              (in order to get the length for your relations, you scrape them from  http://ra.osmsurround.org/analyzeRelation using a modified version of this script.)
 Questions: s8evq@runbox.com

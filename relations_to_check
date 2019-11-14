@@ -1,0 +1,6 @@
+# Comma seperated list of relations to check
+# First field is relation number
+# second field is length of the relation, as reported by http://ra.osmsurround.org/analyzeRelation?relationId=xxxxxxxx
+# So perhaps confusing, but 1851798,6.979 is relation 1851798 with lenth 6.979
+# Example
+1851798,6.979
