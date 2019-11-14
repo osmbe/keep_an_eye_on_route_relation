@@ -7,6 +7,9 @@
 # (optional): 	You can add a comma, followed by the relation length, expressed in KM, with decimal separator "."
 # 		for example: 52997,7.161
 # 		(in order to get the length for your relations, you scrape them from  http://ra.osmsurround.org/analyzeRelation using a modified version of this script.
+#
+# Warning: the command on line 24 and 49 is used to round down the length to two decimal digits. This might not work, depending on your locale. Please read https://unix.stackexchange.com/questions/167058/how-to-round-floating-point-numbers-in-shell if you have problems
+#
 # Questions: s8evq@runbox.com
 
 
@@ -20,7 +23,7 @@ grep -v "#" $list | while read list_line
 do
 
 list_relationnr=$(echo $list_line | cut -f1 -d,)
-list_length=$(echo $list_line | cut -s -f2 -d,)
+list_length=$(echo $list_line | cut -s -f2 -d, | xargs printf "%.*f\n" '2')
 
 
 # sleep function. so the script does not bother the ra.osmsurround.org website too much
@@ -43,7 +46,7 @@ fi
 
 
 #check length
-grepped_length=$(grep "Length in KM: <span class=\"label label-info\">" $tmp_html | cut -f2 -d ">" | cut -f1 -d "<" )
+grepped_length=$(grep "Length in KM: <span class=\"label label-info\">" $tmp_html | cut -f2 -d ">" | cut -f1 -d "<" | xargs printf "%.*f\n" '2')
 if [ ! -z $list_length ] ; then
 	if [ ! "$(echo $grepped_length==$list_length | bc -l)" == 1 ]; then
 		echo "NOT OK $list_relationnr Length does not match. Was $grepped_length instead of $list_length".
